@@ -67,18 +67,17 @@ LIMIT 0 , 30
 more than $100? Return the name and monthly maintenance of the facilities
 in question. */
 
-SELECT * , 
+SELECT monthlymaintenance, name 
 CASE 
 WHEN  `monthlymaintenance` >100
 THEN  'expensive'
-WHEN  `monthlymaintenance` <100
+WHEN  `monthlymaintenance` <=100
 THEN  'cheap'
 ELSE NULL 
 END 
-FROM  `Facilities`
-
-ORDER BY `name`, `monthlymaintenance`
-
+FROM  `Facilities` 
+ORDER BY name, monthlymaintenance
+LIMIT 0 , 30
 LIMIT 0 , 30
 
 
